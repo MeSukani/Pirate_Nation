@@ -509,8 +509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc3868082b946c408f9bb2f1361d6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressText: {fileID: 0}
-  totalGames: 3
 --- !u!4 &667484759
 Transform:
   m_ObjectHideFlags: 0
@@ -1993,6 +1991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestionUI
       objectReference: {fileID: 0}
+    - target: {fileID: 845734277753580546, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2659002075916623264, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
       propertyPath: quizManager
       value: 
@@ -2089,6 +2091,22 @@ PrefabInstance:
       propertyPath: quizManager
       value: 
       objectReference: {fileID: 1808128937}
+    - target: {fileID: 8667786044163130684, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 156.0124
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667786044163130684, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 156.2204
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667786044163130684, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -34.802094
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667786044163130684, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 371
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

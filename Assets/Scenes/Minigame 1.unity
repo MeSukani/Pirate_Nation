@@ -1635,7 +1635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1884032193}
   movesText: {fileID: 1894124286}
-  totalMoves: 1
+  totalMoves: 10
   gameOverPanel: {fileID: 1011249111}
   finalScoreText: {fileID: 1248937301}
   redirectPanel: {fileID: 590591181}
