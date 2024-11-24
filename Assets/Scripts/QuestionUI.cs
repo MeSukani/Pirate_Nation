@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 public class QuestionUI : MonoBehaviour
 {
      public GameObject questionUI;
-     private bool uiVisible = false;
-
-
+     
     private void Start()
     {
         questionUI.SetActive(false);
@@ -27,7 +25,7 @@ public class QuestionUI : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit))
         {
-           uiVisible = true;
+           
            questionUI.SetActive(true);
         }
     }

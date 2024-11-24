@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 
 [RequireComponent(typeof(ARPlaneManager))]
 [RequireComponent(typeof(ARRaycastManager))]
-public class Plane : MonoBehaviour 
+public class plane : MonoBehaviour 
 {
     [Header("AR Components")]
     private ARPlaneManager planeManager;
