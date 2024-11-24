@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HomeScreen.unity
+    guid: 1d269edf7b3b57248a9cbf7beedf79d7
+  - enabled: 1
+    path: Assets/Scenes/PlaneDetaction.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Minigame 1.unity
+    guid: f92beb896ef7b3541a622f34a7ceed72
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 9e39b6baf8f6fac4c85af6b8559cdba2, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: ed7b346d022fce24db8083a5818c0264, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9cfed68110cc676489958977a9587657, type: 2}
