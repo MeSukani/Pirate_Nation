@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 656674280}
   - component: {fileID: 656674279}
   - component: {fileID: 656674278}
+  - component: {fileID: 656674282}
   m_Layer: 5
   m_Name: MainUI
   m_TagString: Untagged
@@ -480,6 +481,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &656674282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656674277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c594282435102ad478253cd1f81991ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  howToPlayScreen: {fileID: 2087227785}
 --- !u!1 &667484757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
+    - target: {fileID: 4551127285042120100, guid: 417b9c4c752fbcb4cb184417fbdf65af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7987158453504101314, guid: 417b9c4c752fbcb4cb184417fbdf65af, type: 3}
       propertyPath: questionUI
       value: 
@@ -1556,7 +1574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: alphabets
+  - Question: How many alphabets?
     Anwers:
     - 24
     - 25
@@ -1993,7 +2011,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 845734277753580546, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935664680002184500, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935664680002184500, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935664680002184500, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 656674282}
+    - target: {fileID: 1935664680002184500, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935664680002184500, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935664680002184500, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuestionToggle, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935664680002184500, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2659002075916623264, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
       propertyPath: quizManager
