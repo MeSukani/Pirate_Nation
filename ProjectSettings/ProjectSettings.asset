@@ -166,6 +166,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DefaultCompany.Pirate_Nation
+    Standalone: com.DefaultCompany.Pirate-Nation
   buildNumber:
     Standalone: 0
     VisionOS: 0
