@@ -18,7 +18,7 @@ Shader "Custom/WaterShader"
     }
     SubShader
     {
-        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
+        Tags { "RenderType"="Opeque" "Queue"="Transparent"}
         LOD 200
         
         Stencil

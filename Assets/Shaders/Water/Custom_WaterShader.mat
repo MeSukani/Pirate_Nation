@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthMaxDistance: 1.81
+    - _DepthMaxDistance: 1
     - _FresnelPower: 5
     - _Glossiness: 0.8
     - _ShoreBlend: 1
@@ -38,6 +38,6 @@ Material:
     - _WaveHeight: 0.1
     - _WaveSpeed: 0.5
     m_Colors:
-    - _Color: {r: 0.19517623, g: 0.57119983, b: 0.9622642, a: 0.7176471}
-    - _ShallowColor: {r: 0.5454343, g: 0.7945495, b: 0.9716981, a: 0.24705882}
+    - _Color: {r: 0.1, g: 0.3, b: 0.5, a: 0.9}
+    - _ShallowColor: {r: 0.3, g: 0.65, b: 0.9, a: 0.5}
   m_BuildTextureStacks: []

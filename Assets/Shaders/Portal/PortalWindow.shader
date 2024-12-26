@@ -5,6 +5,7 @@ Shader "Custom/PortalWindow"
     {
         ZWrite off
         ColorMask 0 
+        Cull off
 
         Stencil 
         {
