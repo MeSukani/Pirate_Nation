@@ -10,6 +10,7 @@ TagManager:
   - Obstacle
   - Dimension
   - PortalQuad
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
