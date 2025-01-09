@@ -10,11 +10,14 @@ public class ShipController : MonoBehaviour
     [SerializeField] private float tiltSpeed = 5f;
     [SerializeField] private float maxTiltAngle = 10f;
     [SerializeField] private float returnSpeed = 3f;
+    [SerializeField] private float wheelRotationSpeed = 90f; // Control wheel rotation speed
+    [SerializeField] private Transform shipWheel; // Reference to the wheel object
     
     private Vector2 touchStartPos;
     private bool isTouching = false;
     private float currentTiltAngle = 0f;
-    private const float baseRotation = -90f;
+    private float currentWheelRotation = 0f;
+    private const float baseRotation = 0.1f;
 
     void Update()
     {
@@ -41,17 +44,25 @@ public class ShipController : MonoBehaviour
                         
                         // Calculate tilt
                         float targetTilt = 0f;
+                        float targetWheelRotation = 0f;
+
                         if (deltaX > 0) // Moving right
                         {
-                            targetTilt = -maxTiltAngle; // Positive for right tilt
+                            targetTilt = -maxTiltAngle;
+                            targetWheelRotation = 360f; // Rotate wheel clockwise
                         }
                         else if (deltaX < 0) // Moving left
                         {
-                            targetTilt = maxTiltAngle; // Negative for left tilt
+                            targetTilt = maxTiltAngle;
+                            targetWheelRotation = -360f; // Rotate wheel counter-clockwise
                         }
                         
-                        // Smooth tilt transition
+                        // Smooth tilt transition for ship
                         currentTiltAngle = Mathf.Lerp(currentTiltAngle, targetTilt, Time.deltaTime * tiltSpeed);
+                        
+                        // Smooth rotation for wheel
+                        currentWheelRotation = Mathf.Lerp(currentWheelRotation, targetWheelRotation, 
+                            Time.deltaTime * wheelRotationSpeed);
                         
                         touchStartPos = touch.position;
                     }
@@ -66,9 +77,17 @@ public class ShipController : MonoBehaviour
         {
             // Return to center when not touching
             currentTiltAngle = Mathf.Lerp(currentTiltAngle, 0f, Time.deltaTime * returnSpeed);
+            currentWheelRotation = Mathf.Lerp(currentWheelRotation, 0f, Time.deltaTime * returnSpeed);
         }
 
-        // Apply rotation
+        // Apply ship rotation
         transform.eulerAngles = new Vector3(baseRotation + currentTiltAngle, -90f, 0f);
+
+        // Apply wheel rotation
+        if (shipWheel != null)
+        {
+            shipWheel.localRotation = Quaternion.Euler(currentWheelRotation, shipWheel.localEulerAngles.y, 
+                shipWheel.localEulerAngles.z);
+        }
     }
 }

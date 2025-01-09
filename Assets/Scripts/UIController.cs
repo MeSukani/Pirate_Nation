@@ -10,4 +10,9 @@ public class UIController : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+
+    public void backButton()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 }

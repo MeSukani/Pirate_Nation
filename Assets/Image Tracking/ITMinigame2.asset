@@ -21,9 +21,9 @@ MonoBehaviour:
       m_GuidLow: 5555775302654140413
       m_GuidHigh: 5315383720339708565
     m_SerializedTextureGuid:
-      m_GuidLow: 17646460332052313383
-      m_GuidHigh: 17285013134632438635
+      m_GuidLow: 5333426737536253111
+      m_GuidHigh: 15419185154256308267
     m_Size: {x: 0.11512605, y: 0.1}
     m_SpecifySize: 0
-    m_Name: Screenshot 2024-12-24 130502
-    m_Texture: {fileID: 2800000, guid: 52fff527d22df4e46b4bbab3ddb3e0ef, type: 3}
+    m_Name: minigame2
+    m_Texture: {fileID: 2800000, guid: 2e6b3cb7235c4a042b886c1534f3fbd5, type: 3}

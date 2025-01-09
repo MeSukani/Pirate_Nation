@@ -14,7 +14,7 @@ public class EnvironmentSender : MonoBehaviour
         sendTimer -= Time.deltaTime;
         if (sendTimer <= 0)
         {
-            Instantiate(floor,new Vector3(0,0, 999f),transform.rotation);
+            Instantiate(floor,new Vector3(0,58.3f, 850f),transform.rotation);
             sendTimer = frequency;
         }
     }
