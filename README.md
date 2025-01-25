@@ -3,9 +3,9 @@
 Experience an exciting journey through three unique minigames that blend puzzle-solving with augmented reality!
 
 ## Clone information
-The Latest updates are in the `Minigame-3` Branch
-Unity version - `2022.3.20f1`
-AR foundation version - `5.1.5`
+- The Latest updates are in the `Minigame-3` Branch
+- Unity version - `2022.3.20f1`
+- AR foundation version - `5.1.5`
 
 
 
