@@ -5,11 +5,14 @@ public class Destructible : MonoBehaviour
 {
    public GameObject destroyedVersion;
    public Slider progressSlider;
+   public AudioSource destructionSound;
    private Camera arCamera;
+   private GameEndManager endManager;
 
    void Start()
    {
        arCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+       endManager = FindObjectOfType<GameEndManager>();
    }
 
    void Update()
@@ -21,7 +24,14 @@ public class Destructible : MonoBehaviour
 
            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
            {
-               progressSlider.value += 0.1f; // Increases by 10%
+               progressSlider.value += 1f;
+               if (destructionSound != null) destructionSound.Play();
+               
+               if (progressSlider.value >= progressSlider.maxValue)
+               {
+                   endManager.TriggerEndSequence();
+               }
+               
                Instantiate(destroyedVersion, transform.position, transform.rotation);
                Destroy(gameObject);
            }

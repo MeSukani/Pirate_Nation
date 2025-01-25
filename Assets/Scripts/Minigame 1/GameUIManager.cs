@@ -114,57 +114,38 @@ public class GameUIManager : MonoBehaviour
     }
 
     private IEnumerator TransitionToFirstScene()
+{
+    yield return new WaitForSeconds(gameOverDelay);
+
+    if (gameOverPanel != null)
+        gameOverPanel.SetActive(false);
+        
+    if (redirectPanel != null)
     {
-        // Update game progress
-        if (GameProgress.Instance != null)
+        redirectPanel.SetActive(true);
+        
+        for (int i = (int)redirectCountdown; i > 0; i--)
         {
-            GameProgress.Instance.CompleteGame();
+            if (redirectText != null)
+                redirectText.text = $"You will be redirected to your next game in {i} seconds...";
+            yield return new WaitForSeconds(1f);
         }
-
-        // Wait for initial delay
-        yield return new WaitForSeconds(gameOverDelay);
-
-        // Switch to redirect panel
-        if (gameOverPanel != null)
-        {
-            gameOverPanel.SetActive(false);
-        }
-        if (redirectPanel != null)
-        {
-            redirectPanel.SetActive(true);
-            
-            // Countdown
-            for (int i = (int)redirectCountdown; i > 0; i--)
-            {
-                if (redirectText != null)
-                {
-                    redirectText.text = $"You will be redirected to your next game in {i} seconds...";
-                }
-                yield return new WaitForSeconds(1f);
-            }
-        }
-
-        // Load the menu scene
-        SceneManager.LoadScene(menuSceneIndex);
     }
+
+    // Mark current game as complete first
+    MenuManager.Instance.CompleteCurrentGame();
+    
+    // Wait one frame to ensure PlayerPrefs are saved
+    yield return null;
+    
+    // Now load the menu scene
+    SceneManager.LoadScene("Scenes/Progress");
+}
 
     public bool HasMovesLeft()
     {
         return movesLeft > 0 && !isTransitioning;
     }
 
-    // Optional: Add method to handle scene loading errors
-    private void LoadMenuScene()
-    {
-        try
-        {
-            SceneManager.LoadScene(menuSceneIndex);
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"Failed to load menu scene: {e.Message}");
-            // Fallback to first scene if menu scene index is invalid
-            SceneManager.LoadScene(0);
-        }
-    }
+   
 }

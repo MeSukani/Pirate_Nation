@@ -14,6 +14,7 @@ public class Portal : MonoBehaviour
     bool inOtherWorld;
     bool hasCollided;
 
+    public AudioSource portalSound;
     void Start()
     {
         if (device == null)
@@ -23,6 +24,15 @@ public class Portal : MonoBehaviour
         SetMaterials(false);
         
         quad = GameObject.Find("XR Origin/Camera Offset/Main Camera/Quad");
+        if (portalSound == null)
+        {
+            GameObject soundObj = new GameObject("PortalSound");
+            soundObj.transform.parent = transform;
+            portalSound = soundObj.AddComponent<AudioSource>();
+            portalSound.clip = Resources.Load<AudioClip>("PortalSound");           
+            portalSound.playOnAwake = false;
+            portalSound.spatialBlend = 1f;
+        }
         
         // Enable them when portal spawns
         if (SceneObjectManager.Instance != null)
@@ -30,6 +40,9 @@ public class Portal : MonoBehaviour
             SceneObjectManager.Instance.dimension.SetActive(true);
             SceneObjectManager.Instance.quad.SetActive(true);
         }
+
+        
+
     }
 
     void SetMaterials(bool fullRender)
@@ -54,6 +67,7 @@ public class Portal : MonoBehaviour
             return;
             wasInfront = GetIsInFront();
             hasCollided = true;
+            portalSound.Play();
 
         
     }
@@ -64,6 +78,7 @@ public class Portal : MonoBehaviour
         
             return;
             hasCollided = false;
+            portalSound.Play();
     }
 
     void whileCameraColliding()

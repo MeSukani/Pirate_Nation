@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/HomeScreen.unity
     guid: 1d269edf7b3b57248a9cbf7beedf79d7
+  - enabled: 1
+    path: Assets/Scenes/Progress.unity
+    guid: 0f19400697cd94f4185f05a4a8333401
   - enabled: 0
     path: Assets/Scenes/PlaneDetaction.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Minigame 1.unity
     guid: f92beb896ef7b3541a622f34a7ceed72
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Minigame 2.unity
     guid: 4236c218f163eac459a7198168dd73f5
   - enabled: 1

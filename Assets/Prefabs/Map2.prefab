@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 2142260751108753426}
   - component: {fileID: 793523943005123099}
   - component: {fileID: 3229587371356604618}
-  - component: {fileID: 8796569901801210443}
   - component: {fileID: 925118180942556509}
   m_Layer: 0
   m_Name: Map2
-  m_TagString: Untagged
+  m_TagString: PuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8796569901801210443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2694295436883518362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb919ca0cc044746afdf5de41f84bb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questionUI: {fileID: 1215947013260166320, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
 --- !u!136 &925118180942556509
 CapsuleCollider:
   m_ObjectHideFlags: 0

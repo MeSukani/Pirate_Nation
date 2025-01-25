@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &172087978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172087980}
+  - component: {fileID: 172087979}
+  m_Layer: 0
+  m_Name: MainGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &172087979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172087978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7802ed6f65287c459538ddc0561066e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressText: {fileID: 1136103621}
+  questionUI: {fileID: 6510454102727106415}
+  currentGameProgress: 0
+  totalMaps: 3
+--- !u!4 &172087980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172087978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -60.862694, y: 357.58698, z: -147.76752}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195187663
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +551,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 667484759}
-  - component: {fileID: 667484758}
   m_Layer: 0
   m_Name: MenuProgressManager
   m_TagString: Untagged
@@ -511,18 +558,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &667484758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667484757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc3868082b946c408f9bb2f1361d6fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &667484759
 Transform:
   m_ObjectHideFlags: 0
@@ -1122,7 +1157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630298937}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2003,7 +2038,15 @@ PrefabInstance:
     - target: {fileID: 4780135844886918818, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 656674282}
+      objectReference: {fileID: 172087979}
+    - target: {fileID: 4780135844886918818, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseQuestionUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780135844886918818, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainGameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7001227918951225760, guid: d9aad9acde78c024fba68544b43e8d12, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2159,18 +2202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map2
       objectReference: {fileID: 0}
-    - target: {fileID: 2694295436883518362, guid: 457a58039c047914796eb5ad4b12e854, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3229587371356604618, guid: 457a58039c047914796eb5ad4b12e854, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8796569901801210443, guid: 457a58039c047914796eb5ad4b12e854, type: 3}
-      propertyPath: questionUI
-      value: 
-      objectReference: {fileID: 6510454102727106415}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2189,3 +2224,4 @@ SceneRoots:
   - {fileID: 1808128938}
   - {fileID: 667484759}
   - {fileID: 8513233312726816085}
+  - {fileID: 172087980}

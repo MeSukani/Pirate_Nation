@@ -12,12 +12,26 @@ public class ShipController : MonoBehaviour
     [SerializeField] private float returnSpeed = 3f;
     [SerializeField] private float wheelRotationSpeed = 90f; // Control wheel rotation speed
     [SerializeField] private Transform shipWheel; // Reference to the wheel object
+
+    [Header("Audio")]
+   public AudioSource waterAmbientSound;
+   public AudioSource shipTiltSound;
+   public AudioSource wheelRotationSound;
     
     private Vector2 touchStartPos;
     private bool isTouching = false;
     private float currentTiltAngle = 0f;
     private float currentWheelRotation = 0f;
     private const float baseRotation = 0.1f;
+
+     void Start()
+   {
+       if (waterAmbientSound != null)
+       {
+           waterAmbientSound.Play();
+           waterAmbientSound.loop = true;
+       }
+   }
 
     void Update()
     {
@@ -65,6 +79,16 @@ public class ShipController : MonoBehaviour
                             Time.deltaTime * wheelRotationSpeed);
                         
                         touchStartPos = touch.position;
+                         if (shipTiltSound != null && Mathf.Abs(deltaX) > 0.01f)
+                        {
+                            if (!shipTiltSound.isPlaying) shipTiltSound.Play();
+                        }
+
+                        // Play wheel rotation sound
+                        if (wheelRotationSound != null && Mathf.Abs(deltaX) > 0.01f)
+                        {
+                            if (!wheelRotationSound.isPlaying) wheelRotationSound.Play();
+                        }
                     }
                     break;
 
@@ -78,6 +102,9 @@ public class ShipController : MonoBehaviour
             // Return to center when not touching
             currentTiltAngle = Mathf.Lerp(currentTiltAngle, 0f, Time.deltaTime * returnSpeed);
             currentWheelRotation = Mathf.Lerp(currentWheelRotation, 0f, Time.deltaTime * returnSpeed);
+            if (shipTiltSound != null && shipTiltSound.isPlaying) shipTiltSound.Stop();
+            if (wheelRotationSound != null && wheelRotationSound.isPlaying) wheelRotationSound.Stop();
+       
         }
 
         // Apply ship rotation

@@ -54,7 +54,7 @@ public class QuizManager : MonoBehaviour
         {
             yield return new WaitForSeconds(3f);
             QnA.RemoveAt(currentQuestion);
-            SceneManager.LoadScene(2);
+            MainGameManager.Instance.OnRiddleSolved();
         }
         else
         {

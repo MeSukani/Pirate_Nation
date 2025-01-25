@@ -11,6 +11,8 @@ TagManager:
   - Dimension
   - PortalQuad
   - Checkpoint
+  - PuzzlePiece
+  - Treasure
   layers:
   - Default
   - TransparentFX

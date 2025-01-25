@@ -1,38 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
-public class ShipCollision : MonoBehaviour
+public class ShipCollision : MonoBehaviour 
 {
-   public GameObject deathExplotion;
-   // public GameObject checkpointSound;
+    public GameObject deathExplotion;
     public TMP_Text scoreText;
     public int score;
     public GameObject gameoverUI;
+    public GameObject winScreen; // Add win screen reference
+    public AudioSource collisionSound;
+    public AudioSource checkpointSound;
+    
 
     private void Start()
     {
         gameoverUI.SetActive(false);
+        winScreen.SetActive(false);
     }
 
-    void OnTriggerEnter(Collider other) 
+    void OnTriggerEnter(Collider other)
     {
-        gameoverUI.SetActive(false);
-        if (other.gameObject.tag == "Obstacle")
+        if (other.gameObject.CompareTag("Obstacle"))
         {
-          GameObject deathObj = Instantiate(deathExplotion, transform.position, transform.rotation) as GameObject;
-            
+            if (collisionSound != null) collisionSound.Play();
+            GameObject deathObj = Instantiate(deathExplotion, transform.position, transform.rotation);
             ARGameManager.Instance.gameOver();
             gameoverUI.SetActive(true);
             Time.timeScale = 0f;
         }
-        else if (other.gameObject.tag == "Checkpoint")
+        else if (other.gameObject.CompareTag("Checkpoint"))
         {
+            if (checkpointSound != null) checkpointSound.Play();
             score += 1;
             scoreText.text = score.ToString();
-           // Instantiate(checkpointSound, transform.position, transform.rotation);
         }
+        else if (other.gameObject.CompareTag("Treasure"))
+        {
+            
+            winScreen.SetActive(true);
+            StartCoroutine(WinSequence());
+        }
+    }
 
+    IEnumerator WinSequence()
+    {
+        yield return new WaitForSeconds(2f);
+        MenuManager.Instance.CompleteCurrentGame();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Progress");
     }
 }

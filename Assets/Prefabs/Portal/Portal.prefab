@@ -354,6 +354,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 052a81410837cf0418d7b8a9d131d193, type: 2}
   - {fileID: 2100000, guid: 60162d16ecff04e48a7c0b62b5454994, type: 2}
   device: {fileID: 0}
+  portalSound: {fileID: 0}
 --- !u!54 &1971267474385318592
 Rigidbody:
   m_ObjectHideFlags: 0

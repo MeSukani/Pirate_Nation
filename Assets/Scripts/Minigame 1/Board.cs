@@ -4,6 +4,10 @@ using System.Linq;
 
 public class Board : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource pieceClickSound;
+    public AudioSource pathCompleteSound;
+
     [Header("Board Settings")]
     public int width;
     public int height;
@@ -274,6 +278,7 @@ public class Board : MonoBehaviour
         }
 
         if (isProcessingMatch) return;
+         if (pieceClickSound != null) pieceClickSound.Play();
 
         if (currentPath.Count == 0)
         {
@@ -337,6 +342,7 @@ public class Board : MonoBehaviour
                 uiManager.AddScore(score);
                 uiManager.DecrementMoves();
             }
+            if (pathCompleteSound != null) pathCompleteSound.Play();
 
             // Only process the board if the game isn't over
             if (uiManager != null && uiManager.HasMovesLeft())
